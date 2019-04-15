@@ -1,0 +1,67 @@
+﻿<Window x:Class="HotelDbClients.UserWindow.AddClientsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HotelDbClients.UserWindow"
+        mc:Ignorable="d"
+        Title="AddClientsWindow" MaxWidth="400" Height="450" MinHeight="450" MinWidth="400" Width="400">
+    <Window.Resources>
+
+        <Style TargetType="TextBox">
+            <Setter Property="Margin" Value="5 10 5 10" />
+            <Setter Property="FontSize" Value="11"/>
+            <Setter Property="BorderBrush" Value="Aqua"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid Style="{StaticResource Grids_style_chernika}">
+        <Grid  Style="{StaticResource Grid_Inner_regrCorrect}">
+            <Border Style="{StaticResource Border_Corection_Corr}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="35" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="50"/>
+                    </Grid.RowDefinitions>
+                    <Border CornerRadius="10 10 0 0"  Background="{StaticResource brushHeader}" DockPanel.Dock="Top">
+                        <TextBlock Style="{StaticResource Textblock_header_punkts}" Text="Заполните информацию о клиенте" />
+                    </Border>
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Style="{StaticResource inner_body_Text}" Grid.Row="0" Text="Фамилия"/>
+                        <TextBlock Style="{StaticResource inner_body_Text}" Grid.Row="1" Text="Имя"/>
+                        <TextBlock Style="{StaticResource inner_body_Text}" Grid.Row="2" Text="Отчество" />
+                        <TextBlock Style="{StaticResource inner_body_Text}" Grid.Row="3" Text="Серия номер пасспорта"/>
+                        <TextBlock Style="{StaticResource inner_body_Text}" Grid.Row="4" Text="Дата заселения"/>
+                        <TextBlock Style="{StaticResource inner_body_Text}" Grid.Row="5" Text="Дата выселения" />
+                        <TextBlock Style="{StaticResource inner_body_Text}" Grid.Row="6" Text="номер комнаты"/>
+                        <TextBox x:Name="SurnameTbx" Grid.Column="1" Grid.Row="0"/>
+                        <TextBox x:Name="NameTbx" Grid.Column="1" Grid.Row="1"/>
+                        <TextBox x:Name="PatronymicTbx" Grid.Column="1" Grid.Row="2"/>
+                        <TextBox x:Name="PassportTbx" Grid.Column="1" Grid.Row="3"/>
+                        <DatePicker x:Name="firstDP" Height="30" Grid.Column="1" Grid.Row="4"/>
+                        <DatePicker x:Name="secondDP" Height="30" Grid.Column="1" Grid.Row="5"/>
+                        <TextBox x:Name="RoomNumbTbx" Grid.Column="1" Grid.Row="6"/>
+                    </Grid>
+                    <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Grid.Row="2">
+                        <Button Margin="0 0 10 0"  Style="{StaticResource button_chernika}" Content="добавить" Click="AddClients"/>
+                        <Button Margin="0 0 5 0" Style="{StaticResource button_chernika}" Content="отмена" Click="CancelClick"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </Grid>
+    </Grid>
+</Window>
